@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="elementIndex.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="elementIndex.js"></script>
+</head>
+
+<body>
+    <div id="app">
+		<el-form :inline="true" :model="formInline" class="demo-form-inline">
+		  <el-form-item label="审批人">
+			<el-input v-model="formInline.user" placeholder="审批人"></el-input>
+		  </el-form-item>
+		  <el-form-item label="活动区域">
+			<el-select v-model="formInline.region" placeholder="活动区域">
+			  <el-option label="区域一" value="shanghai"></el-option>
+			  <el-option label="区域二" value="beijing"></el-option>
+			</el-select>
+		  </el-form-item>
+		  <el-form-item label="活动区域">
+			  <el-select v-model="formInline.options" placeholder="请选择">
+				<el-option
+				  v-for="item in formInline.options"
+				  :key="item.value"
+				  :label="item.label"
+				  :value="item.value">
+				</el-option>
+			  </el-select>
+		  </el-form-item>
+		  <el-form-item label="活动区域">
+			<el-date-picker
+			  v-model="value"
+			  type="monthrange"
+			  start-placeholder="开始日期"
+			  end-placeholder="结束日期"
+			  :default-time="['00:00:00', '23:59:59']">
+			</el-date-picker>
+		  </el-form-item>
+		  <el-form-item label="审批人">
+			<el-input v-model="formInline.user" placeholder="审批人"></el-input>
+		  </el-form-item>
+		  <el-form-item label="活动区域">
+			<el-select v-model="formInline.region" placeholder="活动区域">
+			  <el-option label="区域一" value="shanghai"></el-option>
+			  <el-option label="区域二" value="beijing"></el-option>
+			</el-select>
+		  </el-form-item>
+		  <el-form-item>
+			<el-button type="primary" @click="onSubmit">查询</el-button>
+		  </el-form-item>
+		</el-form>
+
+    </div>
+</body>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: { 
+				value: '',
+				formInline: {
+				  user: '',
+				  region: '',
+				  options: [{
+					value: '',
+					label: ''
+				  }, {
+					value: '选项2',
+					label: '双皮奶'
+				  }, {
+					value: '选项3',
+					label: '蚵仔煎'
+				  }, {
+					value: '选项4',
+					label: '龙须面'
+				  }, {
+					value: '选项5',
+					label: '北京烤鸭'
+				  }],
+				  value: ''
+				}
+				      
+	
+        }
+    })
+</script>
+
+</html>

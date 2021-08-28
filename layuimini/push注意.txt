@@ -1,0 +1,3 @@
+本地库为main
+远程库为myorigin
+push使用：git push myorigin main
